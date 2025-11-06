@@ -1,0 +1,23 @@
+{
+  "consumerToken": "CUST-1001",
+  "reports": [
+    {
+      "source": "Equifax",
+      "accounts": [
+        {"accountId":"EQ-1234","accountName":"VISA PLAT 1234","issuer":"BigBank","type":"credit_card","status":"open","balance":1200.25,"lastReportDate":"2025-10-15"}
+      ]
+    },
+    {
+      "source": "TransUnion",
+      "accounts": [
+        {"accountId":"TU-9876","accountName":"Visa Platinum 1234","issuer":"BigBank","type":"credit_card","status":"open","balance":0.0,"lastReportDate":"2025-10-01"}
+      ]
+    },
+    {
+      "source": "Experian",
+      "accounts": [
+        {"accountId":"EX-5555","accountName":"VISA PLAT","issuer":"BigBank","type":"credit_card","status":"open","balance":1189.50,"lastReportDate":"2025-09-20"}
+      ]
+    }
+  ]
+}

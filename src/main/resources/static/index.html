@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UCFR Demo</title>
+  <style>body{font-family:Arial;padding:20px}textarea{width:100%;height:200px}</style>
+</head>
+<body>
+  <h1>UCFR Hackathon Demo</h1>
+  <p>Paste sample reports JSON (see sample_reports.json) and click Reconcile.</p>
+  <textarea id="payload"></textarea><br/><br/>
+  <button onclick="reconcile()">Reconcile</button>
+  <pre id="out"></pre>
+
+  <script>
+    async function reconcile(){
+      const payload = JSON.parse(document.getElementById('payload').value || '{}');
+      const res = await fetch('/api/v1/reconcile',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const j = await res.json();
+      document.getElementById('out').textContent = JSON.stringify(j,null,2);
+    }
+
+    // preload sample
+    fetch('/sample_reports.json').then(r=>r.text()).then(t=>document.getElementById('payload').value = t);
+  </script>
+</body>
+</html>
